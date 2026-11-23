@@ -1,0 +1,166 @@
+group: veterinaria
+
+propietario = {
+    id_propietario:number, nombre_pila:string, ap_paterno:string, ap_materno:string, calle:string, colonia:string, cp:string, correo:string
+    1, 'Laura', 'Gómez', 'Pérez', 'Av. Hidalgo 120', 'Centro', '25700', 'laura.gomez@mail.com'
+    2, 'Carlos', 'Ramírez', null, 'Calle Juárez 45', 'Guadalupe', '25750', 'carlos.ramirez@mail.com'
+    3, 'Ana', 'Treviño', 'Salas', 'Blvd. Harold R. Pape 800', 'Pape', '25730', null
+}
+
+telefono_propietario = {
+    id_propietario:number, telefono:string
+    1, '8661234567'
+    1, '8669876543'
+    2, '8665551122'
+    3, '8664447788'
+}
+
+especie = {
+    id_especie:number, nombre:string, tipo:string
+    1, 'Perro', 'CANINO'
+    2, 'Gato', 'FELINO'
+    3, 'Ave', 'EXOTICO'
+}
+
+raza = {
+    id_raza:number, id_especie:number, nombre:string
+    1, 1, 'Labrador'
+    2, 1, 'Chihuahua'
+    3, 2, 'Siamés'
+    4, 2, 'Persa'
+    5, 3, 'Perico australiano'
+}
+
+mascota = {
+    id_mascota:number, nombre:string, id_especie:number, id_raza:number, fecha_nacimiento:string, peso:number, tipo:string, id_propietario:number
+    1, 'Rex', 1, 1, '2019-03-15', 28.5, 'CANINO', 1
+    2, 'Luna', 1, 2, '2021-07-02', 3.2, 'CANINO', 2
+    3, 'Michi', 2, 3, '2020-11-20', 4.1, 'FELINO', 1
+    4, 'Nala', 2, 4, '2022-01-10', 3.8, 'FELINO', 3
+    5, 'Kiwi', 3, 5, '2023-05-05', 0.04, 'EXOTICO', 3
+}
+
+canino = {
+    id_mascota:number, tipo:string, tamano:string, nivel_adiestramiento:string
+    1, 'CANINO', 'GRANDE', 'Avanzado'
+    2, 'CANINO', 'PEQUENO', null
+}
+
+felino = {
+    id_mascota:number, tipo:string, pelaje:string, esterilizado:number
+    3, 'FELINO', 'Corto', 1
+    4, 'FELINO', 'Largo', 0
+}
+
+exotico = {
+    id_mascota:number, tipo:string, tipo_habitat:string, requiere_permiso:number
+    5, 'EXOTICO', 'Jaula amplia', 0
+}
+
+empleado = {
+    id_empleado:number, nombre_pila:string, ap_paterno:string, ap_materno:string, rfc:string, fecha_ingreso:string
+    1, 'Miguel', 'Rojas', 'Díaz', 'ROD850101AB1', '2015-02-01'
+    2, 'Sofía', 'Martínez', 'Lara', 'MALS900505CD2', '2018-08-15'
+    3, 'Daniela', 'Cruz', 'Ibarra', 'CUID950710EF3', '2020-01-10'
+    4, 'Jorge', 'Salinas', 'Vega', 'SAVJ000303GH4', '2022-06-01'
+}
+
+veterinario = {
+    id_empleado:number, cedula_profesional:string
+    1, 'CED1234567'
+    2, 'CED7654321'
+}
+
+veterinario_especialidad = {
+    id_empleado:number, especialidad:string
+    1, 'Medicina general'
+    1, 'Cirugía'
+    2, 'Dermatología'
+}
+
+veterinario_especialista = {
+    id_empleado:number, subespecialidad:string
+    2, 'Dermatología felina'
+}
+
+gerente = {
+    id_empleado:number, departamento:string
+    2, 'Administración'
+}
+
+recepcionista = {
+    id_empleado:number, turno:string
+    3, 'MATUTINO'
+}
+
+auxiliar = {
+    id_empleado:number, area_asignada:string
+    4, 'Hospitalización'
+}
+
+cita = {
+    id_cita:number, id_mascota:number, id_veterinario:number, fecha_hora:string, motivo:string, estado:string
+    1, 1, 1, '2026-10-05 10:00:00', 'Revisión general', 'ATENDIDA'
+    2, 3, 2, '2026-10-06 11:30:00', 'Problema de piel', 'ATENDIDA'
+    3, 2, 1, '2026-11-12 09:00:00', 'Vacunación', 'PROGRAMADA'
+}
+
+consulta = {
+    folio:number, id_mascota:number, id_veterinario:number, fecha:string, diagnostico:string, observaciones:string
+    1, 1, 1, '2026-10-05', 'Otitis leve', 'Limpieza y tratamiento tópico'
+    2, 3, 2, '2026-10-06', 'Dermatitis alérgica', 'Revisión en 15 días'
+    3, 2, 1, '2026-10-20', 'Control sano', 'Sin observaciones'
+}
+
+medicamento = {
+    id_medicamento:number, nombre:string, presentacion:string, existencia:number, precio:number
+    1, 'Amoxicilina', 'Tabletas 250 mg', 50, 120
+    2, 'Meloxicam', 'Suspensión 10 ml', 30, 95.5
+    3, 'Ivermectina', 'Inyectable 50 ml', 20, 210
+}
+
+proveedor = {
+    id_proveedor:number, razon_social:string, contacto:string
+    1, 'Distribuidora Vet del Norte SA de CV', 'ventas@vetnorte.mx'
+    2, 'Farmacéutica Animal Monclova', '866-555-0101'
+}
+
+vacuna = {
+    id_vacuna:number, nombre:string, enfermedad_prevenida:string
+    1, 'Rabia anual', 'Rabia'
+    2, 'Triple felina', 'Panleucopenia, rinotraqueitis y calicivirus'
+}
+
+lote_vacuna = {
+    id_lote:number, id_vacuna:number, codigo_lote:string, caducidad:string
+    1, 1, 'LOTE-R-2026-A', '2027-06-30'
+    2, 2, 'LOTE-TF-2026-B', '2027-03-31'
+}
+
+receta = {
+    folio:number, id_medicamento:number, dosis:string, duracion:string
+    1, 1, '1 tableta cada 12 h', '7 días'
+    2, 2, '0.1 ml/kg cada 24 h', '5 días'
+    3, 3, '0.2 ml dosis única', '1 día'
+}
+
+aplica = {
+    folio:number, id_lote:number
+    1, 1
+    2, 2
+}
+
+suministra = {
+    id_medicamento:number, id_proveedor:number
+    1, 1
+    2, 1
+    2, 2
+    3, 2
+}
+
+factura = {
+    no_factura:number, folio:number, fecha:string, subtotal:number
+    1, 1, '2026-10-05', 450
+    2, 2, '2026-10-06', 380
+}
+
